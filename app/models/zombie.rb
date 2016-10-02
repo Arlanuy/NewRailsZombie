@@ -1,4 +1,5 @@
 class Zombie < ActiveRecord::Base
+  has_one :brain
   scope :rotting, where(rotting: true)
   scope :fresh, where("age <20")
   scope :recent, order("created_at_desc").limit(3)
